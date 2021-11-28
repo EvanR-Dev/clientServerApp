@@ -44,8 +44,7 @@ class client {
             System.out.println("The handshake succeeded.\n" +
                     "Please note, equations must be in the form \"<positive int><space><operation><space><positive int>\".\n" +
                     "You must also tell the server you are exiting by using \"EXIT\"");
-        }
-        else {
+        } else {
             System.out.println("HANDSHAKE FAILED, PLEASE RESTART PROGRAM & TRY AGAIN");
             return;
         }
