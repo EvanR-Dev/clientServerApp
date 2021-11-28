@@ -25,7 +25,7 @@ class client {
         BufferedReader inFromUser =
                 new BufferedReader(new InputStreamReader(System.in));
 
-        // HANDSHAKE ///////////////////////////////////////////
+        ////////////////////// HANDSHAKE /////////////////////////////////
 
         //prompt user for a name, which is sent to the server
         System.out.print("Hello client!\n" +
@@ -39,6 +39,20 @@ class client {
         //ensure it gets confirmed
         answer = inFromServer.readLine();
         System.out.println("FROM SERVER: " + answer);
+        
+        if(answer.equals("OK")) {
+            System.out.println("The handshake succeeded.\n" +
+                    "Please note, equations must be in the form \"<positive int><space><operation><space><positive int>\".\n" +
+                    "You must also tell the server you are exiting by using \"EXIT\"");
+        }
+        else {
+            System.out.println("HANDSHAKE FAILED, PLEASE RESTART PROGRAM & TRY AGAIN");
+            return;
+        }
+        
+        ///////////////////////////// BEGIN QUESTION SENDING //////////////////////////////////
+        
+        
 
         clientSocket.close();
     }
