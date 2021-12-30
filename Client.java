@@ -50,8 +50,22 @@ class client {
         }
         
         ///////////////////////////// BEGIN QUESTION SENDING //////////////////////////////////
-        
-        
+        do {
+            //get equation from user
+            System.out.print("Enter equation(or \"EXIT\"): ");
+            equation = inFromUser.readLine();
+
+            //send the equation over to the server
+            outToServer.writeBytes(equation + '\n');
+
+            //get answer from server
+            answer = inFromServer.readLine();
+
+            //print answer that was received
+            System.out.println("FROM SERVER: " + answer);
+
+            //exit after server sends an exit confirmation
+        } while (!answer.equals("EXIT OK"));
 
         clientSocket.close();
     }
